@@ -1,0 +1,37 @@
+.au {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0;
+  background: #004c00;
+  color: #fff;
+  padding: 10px;
+  margin-top: 25px;
+  h3 {
+    color: #fff;
+  }
+}
+
+.c-link {
+  a {
+    color: #b8cf69 !important;
+  }
+  a:hover {
+    color: #b8cf69 !important;
+    text-decoration: underline;
+  }
+  cursor: pointer;
+}
+
+.eq {
+  background: #f4f4f4;
+  color: #004c00;
+   h3 {
+      color: #004c00;
+      text-align: center;
+   }
+}
+
+.eq-image {
+  height: 200px;
+  float: left;
+}
