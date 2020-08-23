@@ -1,60 +1,94 @@
-
-
-<div class="container-fluid">
+<div class="content">
+<div class="container-fluid m-top">
   <div class="row">
-    <div class="col-sm-12 col-md-12 cu">
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
-          <h3>Contact Us</h3>
-        </div>
-      </div>
-      <div class="row no-margin">
-        <div class="col-sm-12 col-md-1"></div>
-        <div class="col-sm-12 col-md-5">
-            We are based out of Princeton, MA servicing any location in Massachusetts. We would love to discuss your project in detail
-          and explain our process and services further. Please complete the form below and we will be in touch soon.
-        </div>
-        <div class="col-sm-12 col-md-5 cd">
-          <span class="label">Phone: </span> <span class="c-link"><a href="tel:978-464-6071">(978) 464-6071</a></span> <br />
-          <span class="label">Email: </span> <span class="c-link"><a href="mailto:ADUSTLESS@HOTMAIL.COM">ADUSTLESS@HOTMAIL.COM</a></span> <br />
-          <span class="label">Address: </span> 242 E Princeton Rd, Princeton, MA 01541
-        </div>
-        <div class="col-sm-12 col-md-1"></div>
+    <div class="col-sm-12 col-md-1"></div>
+    <div class="col-sm-12 col-md-10 cu">
+      <div class="intro-text">
+        <p>We are based out of Princeton, MA servicing any location in Massachusetts. We would love to discuss your project in detail
+          and explain our process and services further. Please complete the form below and we will be in touch soon.</p>
       </div>
     </div>
-  </div>
-  <div class="row contact-row">
-    <div class="col-sm-12 col-md-1"></div>
-    <div class="col-sm-12 col-md-5 contact-data">
-      <input class="form-control form-control-lg" type="text" placeholder="First Name">
-    </div>
-    <div class="col-sm-12 col-md-5 contact-data">
-      <input class="form-control form-control-lg" type="text" placeholder="Last Name">
-    </div>
     <div class="col-sm-12 col-md-1"></div>
   </div>
-  <div class="row contact-row">
+</div>
+
+  <!--<div class="additional-text">
+    To contact us please complete the form below or contact us via:<br />
+    <span class="label">Phone: </span> <span class="c-link"><a href="tel:978-464-6071">(978) 464-6071</a></span> <br />
+    <span class="label">Email: </span> <span class="c-link"><a href="mailto:ADUSTLESS@HOTMAIL.COM">ADUSTLESS@HOTMAIL.COM</a></span> <br />
+    <span class="label">Address: </span> 242 E Princeton Rd, Princeton, MA 01541
+  </div>-->
+
+  <div class="container-fluid m-top">
+    <div class="row">
+      <div class="col-sm-12 col-md-1"></div>
+      <div class="col-sm-12 col-md-10 contact-form">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <span class="r-e" *ngIf="showRequired">
+              Red Outline = Required
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="input-wrapper">
+            <input class="form-control form-control-lg" [(ngModel)]="contact.firstName" type="text" placeholder="First Name">
+              <div class="data-error" *ngIf="!isFNameValid">
+                First Name is invalid. Please correct and resubmit.
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="input-wrapper">
+            <input class="form-control form-control-lg" type="text" [(ngModel)]="contact.lastName" placeholder="Last Name">
+              <div class="data-error" *ngIf="!isLNameValid">
+                Last Name is invalid. Please correct and resubmit.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="input-wrapper">
+            <input class="form-control form-control-lg" type="text" placeholder="Phone Number" maxlength="10" [(ngModel)]="contact.phoneNum">
+              <div class="data-error" *ngIf="!isPhoneValid">
+                Phone number is invalid. Please correct and resubmit.
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="input-wrapper">
+            <input class="form-control form-control-lg" type="text" placeholder="Email Address" [(ngModel)]="contact.email">
+              <div class="data-error" *ngIf="!isEmailValid">
+                Email is invalid. Please correct and resubmit.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <div class="input-wrapper">
+            <textarea class="form-control form-control-lg contact-ta" placeholder="Tell Us About Your Project" [(ngModel)]="contact.projectDetails"></textarea>
+              <div class="data-error" *ngIf="!isProjectDetailsValid">
+                Project Details are invalid. Please correct and resubmit.
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-1"></div>
+    </div>
+  </div>
+  <div class="row m-top">
     <div class="col-sm-12 col-md-1"></div>
     <div class="col-sm-12 col-md-5 contact-data">
-      <input class="form-control form-control-lg" type="text" placeholder="Phone Number" maxlength="10">
+      <div class="loader" *ngIf="submittingData">Loading...</div>
+      <div class="contact-error" *ngIf="contactFailed">Sorry, something went wrong and the contact requested failed. Please try again later.</div>
+      <div class="contact-success" *ngIf="contactSuccess">Thank you for contacting Affordable Dustless Blasting. We will be in touch soon.</div>
     </div>
     <div class="col-sm-12 col-md-5 contact-data">
-      <input class="form-control form-control-lg" type="text" placeholder="Email Address">
-    </div>
-    <div class="col-sm-12 col-md-1"></div>
-  </div>
-  <div class="row contact-row">
-    <div class="col-sm-12 col-md-1"></div>
-    <div class="col-sm-12 col-md-10 contact-data">
-      <textarea class="form-control form-control-lg contact-ta" placeholder="Tell Us About Your Project"></textarea>
-    </div>
-    <div class="col-sm-12 col-md-1"></div>
-  </div>
-  <div class="row contact-row">
-    <div class="col-sm-12 col-md-1"></div>
-    <div class="col-sm-12 col-md-6 contact-data"></div>
-    <div class="col-sm-12 col-md-4 contact-data">
-      <button class="submit-button">Submit</button>
+      <button class="submit-button" (click)="contactAdb()">Submit</button>
     </div>
     <div class="col-sm-12 col-md-1"></div>
   </div>

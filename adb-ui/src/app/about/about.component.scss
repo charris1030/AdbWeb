@@ -4,14 +4,38 @@
   margin-bottom: 0;
   background: #004c00;
   color: #fff;
+  border-radius: 5px;
   padding: 10px;
-  margin-top: 25px;
   h3 {
     color: #fff;
   }
 }
 
+.eq {
+  text-align: center;
+  margin-bottom: 0;
+  background: #f4f4f4;
+  color: #004c00;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.eq-text {
+  font-size: 20px;
+}
+
+.m-top {
+  margin-top: 15px;
+}
+
+.au-text {
+  font-size: 20px;
+  min-height: 300px;
+  height: 354px;
+}
+
 .c-link {
+  font-weight: bold;
   a {
     color: #b8cf69 !important;
   }
@@ -28,10 +52,26 @@
    h3 {
       color: #004c00;
       text-align: center;
-   }
+      margin-top: 15px;
+    }
 }
 
 .eq-image {
   height: 200px;
-  float: left;
+  align: center;
+  margin-bottom: 15px;
+}
+
+.cu {
+  text-align: center;
+  margin-bottom: 0;
+  background: #020450;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.m-bottom-row {
+  margin-top: 10px;
 }
